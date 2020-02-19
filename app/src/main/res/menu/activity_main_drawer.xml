@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_internet"
+            android:icon="@drawable/ic_menu_wifi"
+            android:title="@string/menu_internet" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_information"
+            android:title="@string/menu_about" />
+        <item
+            android:id="@+id/nav_abacus"
+            android:icon="@drawable/ic_menu_abacus"
+            android:title="@string/menu_abacus" />
+    </group>
+
+    <item android:title="@string/menu_user_gestion">
+        <menu>
+            <item
+                android:id="@+id/nav_form"
+                android:icon="@drawable/ic_menu_form"
+                android:title="@string/menu_form" />
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_menu_profile"
+                android:title="@string/menu_profil" />
+        </menu>
+    </item>
+
+</menu>

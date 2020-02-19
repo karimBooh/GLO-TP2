@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_about">
+
+    <fragment
+        android:id="@+id/nav_internet"
+        android:name="ca.ulaval.ima.tp2.ui.internet.InternetFragment"
+        android:label="@string/menu_internet"
+        tools:layout="@layout/fragment_internet" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="ca.ulaval.ima.tp2.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_abacus"
+        android:name="ca.ulaval.ima.tp2.ui.abacus.AbacusFragment"
+        android:label="@string/menu_abacus"
+        tools:layout="@layout/fragment_abacus" />
+
+    <fragment
+        android:id="@+id/nav_form"
+        android:name="ca.ulaval.ima.tp2.ui.form.FormFragment"
+        android:label="@string/menu_form"
+        tools:layout="@layout/fragment_form" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="ca.ulaval.ima.tp2.ui.profile.ProfileFragment"
+        android:label="@string/menu_profil"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
