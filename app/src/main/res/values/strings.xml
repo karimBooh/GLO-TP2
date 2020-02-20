@@ -25,4 +25,14 @@
     <string name="_12">12</string>
     <string name="_0">0</string>
     <string name="_108">108</string>
+    <string name="firstName">Prénom</string>
+    <string name="lastName">Nom</string>
+    <string name="birthday">Date de naissance:</string>
+    <string name="sexe">Sexe:</string>
+    <string name="men">Masculin</string>
+    <string name="female">Féminin</string>
+    <string name="program">Programme:</string>
+    <string name="submit">Soumettre</string>
+    <string name="description">Description</string>
+    <string name="description_activity">Description Activity</string>
 </resources>

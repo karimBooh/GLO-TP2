@@ -32,6 +32,6 @@
     <fragment
         android:id="@+id/nav_profile"
         android:name="ca.ulaval.ima.tp2.ui.profile.ProfileFragment"
-        android:label="@string/menu_profil"
+        android:label="@string/description_activity"
         tools:layout="@layout/fragment_profile" />
 </navigation>

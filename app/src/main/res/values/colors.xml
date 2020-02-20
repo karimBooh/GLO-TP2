@@ -8,4 +8,5 @@
     <color name="colorButton">#626262</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorSpiner">#E6E6E6</color>
 </resources>

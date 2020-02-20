@@ -12,24 +12,63 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import ca.ulaval.ima.tp2.R;
+import ca.ulaval.ima.tp2.ui.Profil;
 
 public class ProfileFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+
+        final SimpleDateFormat format = new SimpleDateFormat("dd-mm-yyyy");
+        Date date = new Date();
+
+        try {
+            date = format.parse("19-11-1995");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        final Profil profile = new Profil("Karim", "Boulaich", date, "111 274 529", true, "GLO");
+        TextView firstnameText = root.findViewById(R.id.textFirstname);
+        TextView lastNameText = root.findViewById(R.id.textlastname);
+        TextView birthdayText = root.findViewById(R.id.textBirthday);
+        TextView sexText = root.findViewById(R.id.textSex);
+        TextView programText = root.findViewById(R.id.textProgram);
+        TextView descriptionText = root.findViewById(R.id.textDescription);
+
+        firstnameText.setText(profile.getFirstname());
+        lastNameText.setText(profile.getLastname());
+        birthdayText.setText(new SimpleDateFormat("dd-mm-yyyy").format(profile.getBirthday().getTime()));
+        if(profile.getSex())
+            sexText.setText("Masculin");
+        else
+            sexText.setText("Feminin");
+        programText.setText(profile.getProgram());
+
+        InputStream is = getResources().openRawResource(R.raw.ma_description);
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line;
+        String entireFile = "";
+        try {
+            while((line = br.readLine()) != null) {
+                entireFile += (line + "\n");
             }
-        });
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        descriptionText.setText(entireFile);
         return root;
     }
 }
